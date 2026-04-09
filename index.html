@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منصة التنمية البشرية</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script> (function(){ emailjs.init("QIOSMhhqQlGGr66ox"); })(); </script>
+</head>
+
+<body>
+
+    <header>
+        <div class="header-right">
+            <span class="menu-icon" onclick="toggleMenu(event)"><i class="fas fa-leaf"></i></span>
+        </div>
+        <div class="header-center">
+            <div class="logo-wrapper">
+                <img src="logo.png" alt="Logo" class="header-logo">
+                <h1 class="site-title">Hamdaniya VoluHub</h1>
+            </div>
+        </div>
+        <div class="header-left">
+            <button class="header-guide-btn" id="guideBtn">
+                <i class="fas fa-book"></i> <span class="btn-text">الدليل التوعوي</span>
+            </button>
+        </div>
+    </header>
+<nav class="sidebar" id="sidebar">
+    <a href="index.html"><i class="fas fa-house"></i> الرئيسية</a>
+    <a href="about.html"><i class="fas fa-users"></i> من نحن</a>
+    <a href="app-info.html"><i class="fas fa-circle-info"></i> حول البرنامج</a>
+</nav>
+
+    <div class="main-content">
+        <div class="slider-wrapper">
+            <div class="slider" id="mainSlider">
+                <div class="slide"><img src="photo/a1.jpg" alt="1"></div>
+                <div class="slide"><img src="photo/p2.jpeg" alt="2"></div>
+                <div class="slide"><img src="photo/a3.jpg" alt="3"></div>
+                <div class="slide"><img src="photo/a4.jpg" alt="4"></div>
+                <div class="slide"><img src="photo/a6.jpeg" alt="4"></div>
+                <div class="slide"><img src="photo/a7.jpeg" alt="4"></div>
+
+            </div>
+            
+            <div class="arrows">
+                <span class="arrow right" onclick="prevMain()"><i class="fas fa-chevron-right"></i></span>
+                <span class="arrow left" onclick="nextMain()"><i class="fas fa-chevron-left"></i></span>
+            </div>
+            
+            <div class="dots" id="mainDots"></div>
+        </div>
+
+        <div class="suggestion-section">
+            <h2>استكشف أقسام المنصة</h2>
+            <div class="cat-buttons">
+                <a href="volunteer.html" class="cat-btn">الحملات التطوعية <i class="fas fa-hand-holding-heart"></i></a>
+                <a href="solidarity.html" class="cat-btn">التكافل الاجتماعي <i class="fas fa-people-roof"></i></a>
+                <a href="initiatives.html" class="cat-btn">المبادرات المجتمعية <i class="fas fa-seedling"></i></a>
+                <a href="awareness.html" class="cat-btn">التوعية والارشاد <i class="fas fa-lightbulb"></i></a>
+            </div>
+            
+            <div class="input-container-box">
+                <input type="text" id="messageInput" placeholder="اكتب اقتراحك للمنصة هنا...">
+                <button id="sendBtn">إرسال</button>
+            </div>
+        </div>
+
+    </div>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+<script src="script.js"></script>
+</body>
+</html>

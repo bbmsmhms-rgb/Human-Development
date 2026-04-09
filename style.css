@@ -1,0 +1,123 @@
+/* الإعدادات العامة للـ Body تبقى كما هي ... */
+body { margin: 0; font-family: 'Segoe UI', sans-serif; direction: rtl; background: #fdfdfd; overflow-x: hidden; }
+
+/* ... أكواد الهيدر والمنيو تبقى كما هي ... */
+header { background: #2e7d32; color: white; padding: 0 20px; display: flex; align-items: center; justify-content: space-between; position: fixed; top: 0; width: 100%; height: 65px; z-index: 1001; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+.header-center { position: absolute; left: 50%; transform: translateX(-50%); display: flex; align-items: center; justify-content: center; z-index: 1; }
+.logo-wrapper { display: flex; align-items: center; gap: 10px; }
+.header-logo { height: 40px; width: auto; object-fit: contain; }
+.site-title { margin: 0; font-size: 1.1rem; font-weight: bold; white-space: nowrap; }
+.header-guide-btn:hover { background: white; color: #2e7d32; }
+.main-content { padding-top: 85px; }
+.header-guide-btn {
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 6px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    transition: 0.3s;
+    white-space: nowrap;
+
+    /* التعديل المطلوب هنا */
+    margin-left: 40px; /* هذه القيمة تدفع الزر ليزحف جهة اليمين قليلاً */
+}
+
+/* يمكنك زيادة الرقم (مثلاً 40px) إذا أردت أن يزحف مسافة أكبر */
+.sidebar { position: fixed; top: 0; right: -250px; width: 230px; height: 100%; background: white; box-shadow: -2px 0 10px rgba(0,0,0,0.1); transition: 0.3s; z-index: 2000; padding-top: 60px; }
+.sidebar.active { right: 0; }
+.sidebar a { display: block; padding: 15px; text-decoration: none; color: #333; border-bottom: 1px solid #f0f0f0; }
+.sidebar a i { margin-left: 10px; color: #2e7d32; }
+
+/* --- السلايدر - Slider (تم إصلاحه) --- */
+.slider-wrapper { 
+    max-width: 900px; 
+    margin: 10px auto; 
+    overflow: hidden; 
+    position: relative; /* مهم جداً لتموضع الأسهم والنقاط */
+    border-radius: 15px; 
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
+    z-index: 10; /* ضمان ظهوره فوق الخلفية */
+}
+
+.slider { 
+    display: flex; 
+    transition: 0.6s cubic-bezier(0.4, 0, 0.2, 1); 
+    width: 100%; /* تأكيد العرض */
+}
+
+.slide { 
+    min-width: 100%; /* تأكيد عرض كل شريحة */
+    box-sizing: border-box;
+}
+
+.slide img { 
+    width: 100%; 
+    height: 380px; 
+    object-fit: cover; 
+    display: block; /* إزالة المسافات الغريبة تحت الصورة */
+}
+
+/* الأسهم (تم إصلاحها) */
+.arrows { 
+    position: absolute; 
+    top: 50%; 
+    width: 100%; 
+    display: flex; 
+    justify-content: space-between; 
+    transform: translateY(-50%); 
+    pointer-events: none; /* لمنع الأسهم من حجب الضغط على الصور */
+    z-index: 20; /* فوق الصور */
+}
+
+.arrow { 
+    background: rgba(0,0,0,0.3); 
+    color: white; 
+    padding: 12px; 
+    border-radius: 50%; 
+    cursor: pointer; 
+    margin: 0 10px; 
+    pointer-events: auto; /* إعادة تفعيل الضغط على السهم نفسه */
+    transition: 0.3s;
+}
+.arrow:hover { background: rgba(0,0,0,0.6); }
+
+/* النقاط (تم إصلاحها) */
+.dots { 
+    position: absolute; 
+    bottom: 15px; /* المسافة من الأسفل */
+    width: 100%; 
+    text-align: center; 
+    z-index: 20; /* فوق الصور */
+    pointer-events: auto; /* قابلة للضغط */
+}
+
+.dots span { 
+    height: 10px; 
+    width: 10px; 
+    background: rgba(255,255,255,0.5); /* لون شبه شفاف */
+    display: inline-block; 
+    border-radius: 50%; 
+    margin: 0 5px; 
+    cursor: pointer; 
+    transition: 0.3s; 
+    border: 1px solid rgba(0,0,0,0.2); /* إطار ناعم للوضوح */
+}
+
+.dots span.active { 
+    background: #ffffff; /* لون أبيض فاقع للنقطة النشطة */
+    transform: scale(1.3); 
+}
+
+/* --- باقي التنسيقات للأزرار والصفحات الفرعية تبقى كما هي ... */
+.suggestion-section { background-color: #dcedc8; max-width: 500px; margin: 30px auto; padding: 35px 20px; border-radius: 30px; text-align: center; }
+.cat-buttons { display: flex; flex-direction: column; gap: 12px; align-items: center; margin-bottom: 25px; }
+.cat-btn { background: #388e3c; color: white !important; text-decoration: none; width: 85%; padding: 15px; border-radius: 18px; font-size: 1.1rem; display: flex; justify-content: center; align-items: center; gap: 12px; transition: 0.3s; box-sizing: border-box; }
+.cat-btn:hover { background: #2e7d32; transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+#messageInput { width: 90%; padding: 15px; border-radius: 12px; border: 1px solid #ddd; margin-bottom: 15px; outline: none; }
+#sendBtn { background: #2e7d32; color: white; border: none; padding: 10px 40px; border-radius: 10px; cursor: pointer; font-size: 1.1rem; }
+@media (max-width: 600px) { .header-guide-btn .btn-text { display: none; } .site-title { font-size: 0.95rem; } .header-logo { height: 30px; } .slide img { height: 260px; } }
